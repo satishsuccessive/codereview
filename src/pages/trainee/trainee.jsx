@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import * as yup from 'yup';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
 import AddDialog from './index';
 
 const schema = yup.object().shape({
@@ -19,7 +25,7 @@ class TraineePage extends Component {
   validateForm = (e) => {
      const name  =   e.target.value;
     // { field } =  e.target.value;
-     console.log('name errror',this.state);
+     console.log('name errror', this.state);
      schema.validate(
        { name },
        { abortEarly: false },
@@ -56,6 +62,7 @@ getError = () => {
     return (
       <div>
         <AddDialog onChange={this.validateForm} errorName={errors.name}> </AddDialog>
+        {/* <Route path={`${match.url}/q1`} render={routeProps => <JourneyQuesOne {...routeProps} setCount={setCount} count={count} />} /> */}
       </div>
     )
   }

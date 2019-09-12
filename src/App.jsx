@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Match, Redirect, Switch } from 'react-router-dom';
 import Slider from './components/Slider';
  import TraineePage from './pages/trainee/trainee';
+ import TraineeRoute from './pages/trainee/traineeRoute';
  import TextField from './components/TextField'
  // import Navbar from './layouts/components/Navbar';
  import Login from './components/Login'
@@ -26,7 +27,7 @@ const App = () =>
       {/* <InputFieldPage /> */}
       <Router>
         <Switch>
-          <DashboardRoute exact path="/" component={TraineePage} />
+          <DashboardRoute exact path="/" component={TraineeRoute} />
           <DashboardRoute path="/text-field-demo" component={InputFieldPage} />
           <LoginLayoutRoute path="/login" component={Login} />
           <DashboardRoute path="/input-demo" component={Slider} />
